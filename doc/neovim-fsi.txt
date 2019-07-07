@@ -1,0 +1,38 @@
+*neovim-fsi.txt*                     *neovim-fsi*
+
+neovim-fsi - neovim integration of F# interactive.
+
+
+INSTALL                                       *neovim-fsi-install*
+
+Using [vim-plug](https://github.com/junegunn/vim-plug):
+
+>
+    Plug 'buntec/neovim-fsi', { 'do': ':UpdateRemotePlugins' }
+<
+
+COMMANDS                                    *neovim-fsi-commands*
+
+:FsiOpen                        Open new fsi session in split window.
+
+:FsiSendBuffer                  Send current buffer to fsi.
+
+:FsiSendSelection               Send current visual selection to fsi. 
+                                The selection is tacitly expanded to 
+                                include whole lines.
+
+:FsiSendLine                    Send the current line to fsi.
+
+
+SETTINGS                                    *neovim-fsi-settings*
+
+>
+    let g:neovim_fsi_window_height = 15 " default is 12
+<
+
+
+ABOUT                                       *neovim-fsi-about*
+
+GitHub:  https://github.com/buntec/neovim-fsi
+License: MIT
+
