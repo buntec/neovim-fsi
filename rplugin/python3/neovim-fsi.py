@@ -22,8 +22,12 @@ class NeovimFsi(object):
             height = self.nvim.eval("g:neovim_fsi_window_height")
         else:
             height = 12  # defaul fsi window height
+        if self.nvim.call("exists", "g:neovim_fsi_command"):
+            fsi_command = self.nvim.eval("g:neovim_fsi_command")
+        else:
+            fsi_command = "dotnet fsi"  # defaults to dotnet core cli
         self.nvim.command("botright {} new".format(height))
-        self.nvim.command("terminal fsharpi")
+        self.nvim.command("terminal {}".format(fsi_command))
         self.channel = self.nvim.eval("&channel")
         self.nvim.command("normal! G")
         self.nvim.command("wincmd p")
